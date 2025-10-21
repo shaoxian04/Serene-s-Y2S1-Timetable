@@ -274,13 +274,13 @@ h1 {
 .week-title {
     text-align: center;
     margin-bottom: 25px;
-    background: linear-gradient(135deg, #8B5CF6, #A855F7);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #8B5CF6 !important;
     font-size: 1.8rem;
-    font-weight: 600;
+    font-weight: 700 !important;
+    text-shadow: 0 2px 4px rgba(139, 92, 246, 0.3);
     animation: fadeInScale 0.6s ease-out 0.2s both;
+    display: block !important;
+    visibility: visible !important;
 }
 
 @keyframes fadeInScale {
@@ -316,6 +316,21 @@ h1 {
     transform: translateY(-5px) scale(1.02);
 }
 
+.day-section.today {
+    border-color: #F59E0B;
+    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+    animation: todayGlow 3s ease-in-out infinite;
+}
+
+@keyframes todayGlow {
+    0%, 100% { 
+        box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+    }
+    50% { 
+        box-shadow: 0 15px 40px rgba(245, 158, 11, 0.6);
+    }
+}
+
 @keyframes slideInLeft {
     0% {
         opacity: 0;
@@ -338,6 +353,42 @@ h1 {
     text-align: center;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.day-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.day-date {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.today-badge {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    animation: todayPulse 2s ease-in-out infinite;
+}
+
+@keyframes todayPulse {
+    0%, 100% { 
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1);
+    }
+    50% { 
+        background: rgba(255, 255, 255, 0.5);
+        transform: scale(1.05);
+    }
 }
 
 .day-header::before {
@@ -534,6 +585,17 @@ h1 {
     .day-header {
         padding: 12px 15px;
         font-size: 1.1rem;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .day-date {
+        font-size: 0.8rem;
+    }
+    
+    .today-badge {
+        font-size: 0.6rem;
+        padding: 3px 6px;
     }
     
     .activity {
@@ -657,4 +719,314 @@ body::before {
         opacity: 1;
         transform: translateX(0);
     }
+}
+/*
+ Notification System Styles */
+.notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 350px;
+    max-height: 400px;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1000;
+    animation: slideInRight 0.5s ease-out;
+}
+
+.notification-container h3 {
+    margin: 0 0 15px 0;
+    color: #8B5CF6;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.notification-item {
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 4px solid #8B5CF6;
+    animation: fadeInUp 0.3s ease-out;
+}
+
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.notification-type {
+    background: #8B5CF6;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.notification-time {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.notification-subject {
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.notification-preview {
+    color: #718096;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.notification-item button {
+    background: linear-gradient(135deg, #8B5CF6, #A855F7);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+}
+
+.notification-item button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Notification toggle button */
+.notification-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #8B5CF6, #A855F7);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+    z-index: 1001;
+    transition: all 0.3s ease;
+}
+
+.notification-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .notification-container {
+        width: calc(100vw - 40px);
+        right: 20px;
+        left: 20px;
+        top: 80px;
+    }
+    
+    .notification-toggle {
+        top: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+}
+
+/* Email setup instructions */
+.email-setup-info {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid #F59E0B;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+    color: #92400E;
+}
+
+.email-setup-info h4 {
+    margin: 0 0 10px 0;
+    color: #F59E0B;
+}
+
+.email-setup-info code {
+    background: rgba(245, 158, 11, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}/* E
+mailJS Setup Panel */
+.email-setup-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 2000;
+    animation: fadeInScale 0.3s ease-out;
+}
+
+.email-setup-panel h3 {
+    margin: 0 0 20px 0;
+    color: #8B5CF6;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.setup-form {
+    margin-bottom: 25px;
+}
+
+.setup-form label {
+    display: block;
+    margin: 15px 0 5px 0;
+    color: #4a5568;
+    font-weight: 600;
+}
+
+.setup-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.setup-form input:focus {
+    outline: none;
+    border-color: #8B5CF6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.setup-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.setup-buttons button {
+    flex: 1;
+    min-width: 120px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.setup-buttons button:first-child {
+    background: linear-gradient(135deg, #10B981, #059669);
+    color: white;
+}
+
+.setup-buttons button:nth-child(2) {
+    background: linear-gradient(135deg, #F59E0B, #D97706);
+    color: white;
+}
+
+.setup-buttons button:last-child {
+    background: linear-gradient(135deg, #EF4444, #DC2626);
+    color: white;
+}
+
+.setup-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.setup-instructions {
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    border-left: 4px solid #8B5CF6;
+}
+
+.setup-instructions h4 {
+    margin: 0 0 15px 0;
+    color: #8B5CF6;
+}
+
+.setup-instructions ol {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.setup-instructions li {
+    margin-bottom: 8px;
+    color: #4a5568;
+}
+
+.setup-instructions a {
+    color: #8B5CF6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.setup-instructions a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Setup button in notification panel */
+.setup-email-btn {
+    background: linear-gradient(135deg, #8B5CF6, #A855F7);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px 0;
+    width: 100%;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.setup-email-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
 }

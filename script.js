@@ -106,8 +106,8 @@ const timetableData = [
     time: "8:00 AM - 10:00 AM",
     course: "OIA2014",
     activity: "Lecture (Antihepatitis, antiretroviral)",
-    mode: "Physical",
-    venue: "The Cube",
+    mode: "Online",
+    venue: "Microsoft Teams",
   },
   {
     week: 2,
@@ -115,8 +115,8 @@ const timetableData = [
     time: "10:00 AM - 12:00 PM",
     course: "OIA2003",
     activity: "Lecture (Emulsion mfg)",
-    mode: "Physical",
-    venue: "The Cube",
+    mode: "Online",
+    venue: "Pre-Recorded",
   },
   {
     week: 2,
@@ -124,7 +124,7 @@ const timetableData = [
     time: "2:00 PM - 5:00 PM",
     course: "OIA2002",
     activity: "Practical 1 (Group A)",
-    mode: "Physical",
+    mode: "Online",
     venue: "MK2, Makmal Pelbagai/ Alat 1 & 2",
   },
   {
@@ -133,8 +133,8 @@ const timetableData = [
     time: "8:00 AM - 9:00 AM",
     course: "OIA2012",
     activity: "Tutorial 1",
-    mode: "Physical",
-    venue: "The Cube@Pharmacy",
+    mode: "Online",
+    venue: "Online Platform",
   },
   {
     week: 2,
@@ -1146,8 +1146,85 @@ const remainingData = [
 // Combine all data
 timetableData.push(...remainingData);
 
+// Add recurring weekly classes for all weeks (1-14)
+const recurringClasses = [
+  {
+    day: "Tue",
+    time: "5:00 PM - 7:00 PM",
+    course: "GKS1001",
+    activity: "Volunteerism",
+    mode: "Online",
+    venue: "Online Platform"
+  },
+  {
+    day: "Wed",
+    time: "2:00 PM - 4:00 PM",
+    course: "GFW0031",
+    activity: "Computer Network",
+    mode: "Online",
+    venue: "Online Platform"
+  },
+  {
+    day: "Wed",
+    time: "5:00 PM - 7:00 PM",
+    course: "GIG1013",
+    activity: "Ethics",
+    mode: "Online",
+    venue: "Online Platform"
+  }
+];
+
+// Add recurring classes to all weeks (1-14)
+for (let week = 1; week <= 14; week++) {
+  recurringClasses.forEach(classItem => {
+    timetableData.push({
+      week: week,
+      day: classItem.day,
+      time: classItem.time,
+      course: classItem.course,
+      activity: classItem.activity,
+      mode: classItem.mode,
+      venue: classItem.venue
+    });
+  });
+}
+
 // Days of the week in order (weekdays only)
 const daysOrder = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+
+// Date calculation - Today is Week 2 Wednesday (Malaysia time)
+const today = new Date(); // Current date
+const week2Wednesday = new Date(2025, 9, 22); // October 22, 2025 (Week 2 Wednesday)
+
+// Function to get date for a specific week and day
+function getDateForWeekDay(weekNumber, dayName) {
+  const dayIndex = {
+    "Mon": 0,
+    "Tue": 1, 
+    "Wed": 2,
+    "Thu": 3,
+    "Fri": 4
+  };
+  
+  // Calculate days difference from Week 2 Wednesday
+  const weeksDiff = weekNumber - 2;
+  const daysDiff = dayIndex[dayName] - 2; // Wednesday is index 2
+  
+  const targetDate = new Date(week2Wednesday);
+  targetDate.setDate(week2Wednesday.getDate() + (weeksDiff * 7) + daysDiff);
+  
+  return targetDate;
+}
+
+// Function to format date
+function formatDate(date) {
+  const options = { 
+    day: 'numeric', 
+    month: 'short',
+    timeZone: 'Asia/Kuala_Lumpur'
+  };
+  return date.toLocaleDateString('en-US', options);
+}
 
 // Function to get activities for a specific week
 function getWeekActivities(weekNumber) {
@@ -1196,8 +1273,10 @@ function renderWeekTimetable(weekNumber) {
   setTimeout(() => {
     let html = `
             <div class="week-container fade-in">
-                <h2 class="week-title">Week ${weekNumber} Schedule</h2>
+                <h2 class="week-title" style="color: #8B5CF6 !important;">Week ${weekNumber} Schedule</h2>
         `;
+        
+        console.log('Rendering week:', weekNumber); // Debug log
 
     // Continue with the rest of the function...
 
@@ -1205,24 +1284,32 @@ function renderWeekTimetable(weekNumber) {
     daysOrder.forEach((day) => {
       const dayActivities = groupedActivities[day];
 
+      const dayDate = getDateForWeekDay(weekNumber, day);
+      const formattedDate = formatDate(dayDate);
+      const isToday = dayDate.toDateString() === today.toDateString();
+      
       html += `
-            <div class="day-section">
+            <div class="day-section ${isToday ? 'today' : ''}">
                 <div class="day-header">
-                    ${
-                      day === "Mon"
-                        ? "Monday"
-                        : day === "Tue"
-                        ? "Tuesday"
-                        : day === "Wed"
-                        ? "Wednesday"
-                        : day === "Thu"
-                        ? "Thursday"
-                        : day === "Fri"
-                        ? "Friday"
-                        : day === "Sat"
-                        ? "Saturday"
-                        : "Sunday"
-                    }
+                    <div class="day-name">
+                        ${
+                          day === "Mon"
+                            ? "Monday"
+                            : day === "Tue"
+                            ? "Tuesday"
+                            : day === "Wed"
+                            ? "Wednesday"
+                            : day === "Thu"
+                            ? "Thursday"
+                            : day === "Fri"
+                            ? "Friday"
+                            : day === "Sat"
+                            ? "Saturday"
+                            : "Sunday"
+                        }
+                        ${isToday ? '<span class="today-badge">TODAY</span>' : ''}
+                    </div>
+                    <div class="day-date">${formattedDate}</div>
                 </div>
                 <div class="activities">
         `;
