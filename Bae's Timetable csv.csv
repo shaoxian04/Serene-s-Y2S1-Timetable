@@ -1,0 +1,126 @@
+Week,Day,Time,Course,Activity,Mode,Venue
+1,Mon,8:00 AM - 10:00 AM,OIA2002,Lecture (Pharmacopeia),Physical,The Cube @Pharmacy
+1,Mon,2:00 PM - 4:00 PM,OIA2012,Briefing & Lecture (Opioids),Physical,Cube
+1,Tue,8:00 AM - 10:00 AM,OIA2013,Intro & Lecture (Gout),Physical,The Cube
+1,Tue,10:00 AM - 1:00 PM,OIA1017,Lecture (Herbal supplement),Online,SDL (PRE-RECORDED)
+1,Thu,8:00 AM - 10:00 AM,OIA2014,"Intro & Lecture (Anti-TB, Antifungal)",Physical,The Cube
+1,Thu,10:00 AM - 12:00 PM,OIA2003,Intro & Lecture (Emulsion),Physical,The Cube
+1,Fri,8:00 AM - 9:00 AM,OIA2012,Lecture (Opioids),Physical,Cube
+1,Fri,9:00 AM - 10:00 AM,OIA2002,Lecture (Electromagnetic spectrum),Physical,The Cube @Pharmacy
+2,Mon,All Day,OIA2002/OIA2012,Public Holiday (Deepavali),N/A,N/A
+2,Tue,8:00 AM - 10:00 AM,OIA2013,"Lecture (RA, Osteoarthritis)",Physical,The Cube
+2,Wed,9:00 AM - 12:00 PM,OIA1017,"Intro to module, Lecture (Health supplement)",Online,F2F ONLINE
+2,Thu,8:00 AM - 10:00 AM,OIA2014,"Lecture (Antihepatitis, antiretroviral)",Physical,The Cube
+2,Thu,10:00 AM - 12:00 PM,OIA2003,Lecture (Emulsion mfg),Physical,The Cube
+2,Thu,2:00 PM - 5:00 PM,OIA2002,Practical 1 (Group A),Physical,"MK2, Makmal Pelbagai/ Alat 1 & 2"
+2,Fri,8:00 AM - 9:00 AM,OIA2012,Tutorial 1,Physical,The Cube@Pharmacy
+2,Fri,9:00 AM - 10:00 AM,OIA2002,Tutorial 1,Online,Self-paced
+3,Mon,8:00 AM - 10:00 AM,OIA2002,"Lecture (Refractometry, Polarimetry)",Physical,The Cube @Pharmacy
+3,Mon,2:00 PM - 4:00 PM,OIA2012,Lecture (NSAIDs),Physical,Cube
+3,Tue,8:00 AM - 9:00 AM,OIA2013,Lecture (RA - Part 2),Physical,The Cube
+3,Tue,9:00 AM - 10:00 AM,OIA2013,Tutorial 1,Online,Self-paced
+3,Tue,10:00 AM - 1:00 PM,OIA1017,Lecture (Prebiotics & Probiotics),Online,SDL (PRE-RECORDED)
+3,Thu,8:00 AM - 10:00 AM,OIA2014,Lecture (Antiprotozoal) & Tutorial 1,Physical,The Cube
+3,Thu,10:00 AM - 12:00 PM,OIA2003,Lecture (Suspension),Online,Online
+3,Thu,2:00 PM - 5:00 PM,OIA2002,Practical 1 (Group B),Physical,"MK2, Makmal Pelbagai/ Alat 1 & 2"
+3,Fri,8:00 AM - 9:00 AM,OIA2012,Tutorial 2,Online,NF2F
+3,Fri,9:00 AM - 10:00 AM,OIA2002,Tutorial 2,Online,Self-paced
+4,Mon,8:00 AM - 10:00 AM,OIA2002,Lecture (Spectrophotometry),Physical,The Cube @Pharmacy
+4,Mon,10:00 AM - 1:00 PM,OIA2003,Practical 1 (Group A),Physical,Lab
+4,Mon,2:00 PM - 4:00 PM,OIA2012,Lecture (Steroids),Online,NF2F - Interactive Lecture
+4,Tue,8:00 AM - 10:00 AM,OIA2013,Lecture (Management of RA),Physical,The Cube
+4,Tue,10:00 AM - 1:00 PM,OIA1017,Lecture (Vitamins),Online,SDL (PRE-RECORDED)
+4,Thu,8:00 AM - 10:00 AM,OIA2014,Lecture (Management of HIV),Physical,The Cube
+4,Thu,10:00 AM - 12:00 PM,OIA2003,Lecture (Suppositories) & Tutorial 1,Online,Online
+4,Thu,2:00 PM - 5:00 PM,OIA2002,Practical 2 (Group A),Physical,"MK2, Makmal Pelbagai/ Alat 1 & 2"
+4,Fri,8:00 AM - 9:00 AM,OIA2012,Tutorial 3,Online,NF2F
+4,Fri,9:00 AM - 10:00 AM,OIA2002,Lecture (Spectrophotometry),Physical,The Cube @Pharmacy
+5,Mon,8:00 AM - 10:00 AM,OIA2002,Lecture (¹H NMR),Physical,The Cube @Pharmacy
+5,Mon,2:00 PM - 4:00 PM,OIA2012,Lecture (Adrenoceptor agonists),Physical,Cube
+5,Tue,8:00 AM - 10:00 AM,OIA2013,Lecture (Management of Osteoarthritis),Physical,The Cube
+5,Tue,10:00 AM - 1:00 PM,OIA1017,Lecture (Free radicals) & Tutorial 1,Online,F2F ONLINE
+5,Tue,2:00 PM - 5:00 PM,OIA2003,Practical 1 (Group B),Physical,Lab
+5,Thu,8:00 AM - 10:00 AM,OIA2014,Lecture (Tuberculosis) & Tutorial 2,Physical,The Cube
+5,Thu,10:00 AM - 12:00 PM,OIA2003,Lecture (Ointment/Gel),Online,Online
+5,Thu,2:00 PM - 5:00 PM,OIA2002,Practical 2 (Group B),Physical,"MK2, Makmal Pelbagai/ Alat 1 & 2"
+5,Fri,8:00 AM - 9:00 AM,OIA2012,Tutorial 4,Online,NF2F
+5,Fri,9:00 AM - 10:00 AM,OIA2002,Tutorial 3,Online,Self-paced
+6,Mon,8:00 AM - 10:00 AM,OIA2002,Lecture (¹H NMR),Physical,The Cube @Pharmacy
+6,Mon,10:00 AM - 1:00 PM,OIA2003,Practical 2 (Group A),Physical,Lab
+6,Mon,2:00 PM - 4:00 PM,OIA2012,Lecture (Muscarinic receptor),Online,NF2F - Interactive Lecture
+6,Tue,8:00 AM - 10:00 AM,OIA2013,Lecture (Immunosuppressants),Physical,The Cube
+6,Tue,10:00 AM - 1:00 PM,OIA1017,Lecture (Immune health) & Tutorial 2,Online,SDL (ONLINE)
+6,Thu,8:00 AM - 9:00 AM,OIA2014,Test 1,Physical,The Cube
+6,Thu,2:00 PM - 5:00 PM,OIA2002,Practical 3 (Group A),Physical,"MK2, Makmal Pelbagai/ Alat 1 & 2"
+6,Fri,8:00 AM - 9:00 AM,OIA2012,Tutorial 5,Online,NF2F
+6,Fri,9:00 AM - 10:00 AM,OIA2002,Lecture (Chemical shift table),Physical,The Cube @Pharmacy
+7,Mon,8:00 AM - 10:00 AM,OIA2002,Lecture (¹³C NMR) & Assigned Reading,Physical,The Cube @Pharmacy
+7,Mon,2:00 PM - 4:00 PM,OIA2012,Lecture (Antibacterial agents),Physical,Cube
+7,Tue,8:00 AM - 9:00 AM,OIA2013,Lecture (Cytokine modulators),Physical,The Cube
+7,Tue,9:00 AM - 10:00 AM,OIA2013,Tutorial 2,Online,Self-paced
+7,Tue,10:00 AM - 11:00 AM,OIA1017,CONASS Test (20%),Online,TEST (ONLINE)
+7,Tue,2:00 PM - 5:00 PM,OIA2003,Practical 2 (Group B),Physical,Lab
+7,Thu,8:00 AM - 10:00 AM,OIA2014,Lecture (Fungal infections),Physical,The Cube
+7,Thu,2:00 PM - 5:00 PM,OIA2002,Practical 3 (Group B),Physical,"MK2, Makmal Pelbagai/ Alat 1 & 2"
+7,Fri,8:00 AM - 9:00 AM,OIA2012,Test-1 (10%),Physical,Cube
+7,Fri,9:00 AM - 10:00 AM,OIA2002,Tutorial 4,Online,Self-paced
+8,Mon,8:00 AM - 10:00 AM,OIA2002,Test,Physical,The Cube @Pharmacy
+8,Mon,10:00 AM - 1:00 PM,OIA2003,Practical 3 (Group A),Physical,Lab
+8,Mon,2:00 PM - 4:00 PM,OIA2012,Lecture (Anticancer agents),Physical,Cube
+8,Tue,8:00 AM - 9:00 AM,OIA2013,Test 1 (20%),Physical,To be confirmed
+8,Tue,10:00 AM - 1:00 PM,OIA1017,Lecture (Essential Fatty Acids),Online,F2F ONLINE
+8,Tue,2:00 PM - 5:00 PM,OIA2003,Practical 3 (Group B),Physical,Lab
+8,Thu,8:00 AM - 10:00 AM,OIA2014,"Lecture (Viral hepatitis, herpes)",Physical,The Cube
+8,Thu,10:00 AM - 12:00 PM,OIA2003,Test (Physical),Physical,The Cube
+8,Fri,8:00 AM - 9:00 AM,OIA2012,Tutorial 6,Physical,The Cube@Pharmacy
+8,Fri,9:00 AM - 10:00 AM,OIA2002,Lecture (¹³C NMR),Physical,The Cube @Pharmacy
+9,Mon,8:00 AM - 10:00 AM,OIA2002,Lecture (Mass spectrometry),Physical,The Cube @Pharmacy
+9,Mon,2:00 PM - 4:00 PM,OIA2012,Lecture (Sedative & hypnotic),Physical,Cube
+9,Tue,9:00 AM - 10:00 AM,OIA2013,Test review 1,Physical,The Cube
+9,Tue,10:00 AM - 1:00 PM,OIA1017,Lecture (Macrominerals),Online,PRE-RECORDED (SDL)
+9,Thu,8:00 AM - 10:00 AM,OIA2014,Test 1 review & Tutorial 3,Physical,The Cube
+9,Thu,10:00 AM - 12:00 PM,OIA2003,Lecture (Solution Dosage Form),Physical,The Cube
+9,Fri,8:00 AM - 9:00 AM,OIA2012,Tutorial 7,Online,NF2F
+9,Fri,9:00 AM - 10:00 AM,OIA2002,Tutorial 5,Online,Self-paced
+10,Mon,8:00 AM - 10:00 AM,OIA2002,Lecture (Mass spectrometry),Physical,The Cube @Pharmacy
+10,Mon,10:00 AM - 12:00 PM,OIA2003,Lecture (Solution mfg) & Tutorial 2,Physical,The Cube (Replacement)
+10,Mon,2:00 PM - 4:00 PM,OIA2012,Lecture (Antipsychotic agents),Physical,Cube
+10,Tue,8:00 AM - 10:00 AM,OIA2013,SDL (Mgmt of SLE) & Lecture (IBD),Online/Physical,SDL / The Cube
+10,Tue,10:00 AM - 1:00 PM,OIA1017,Lecture (Men & Women's health),Online,SDL (ONLINE)
+10,Thu,8:00 AM - 9:00 AM,OIA2014,Test 2,Physical,The Cube
+10,Thu,9:00 AM - 10:00 AM,OIA2014,Case 1 (Group 1&2),Physical,The Cube
+10,Fri,8:00 AM - 9:00 AM,OIA2012,Tutorial 8,Physical,The Cube@Pharmacy
+10,Fri,9:00 AM - 10:00 AM,OIA2002,Tutorial 6,Online,Self-paced
+11,Mon,8:00 AM - 10:00 AM,OIA2002,"Lecture (Fluorimetry, IR)",Physical,The Cube @Pharmacy
+11,Mon,2:00 PM - 4:00 PM,OIA2012,Lecture (Antipsychotic agents),Online,NF2F - Interactive Lecture
+11,Tue,8:00 AM - 10:00 AM,OIA2013,Assignment submission,N/A,N/A
+11,Tue,10:00 AM - 1:00 PM,OIA1017,Lecture (Mental health),Online,SDL (ONLINE)
+11,Tue,2:00 PM - 4:00 PM,OIA2003,Lecture (Quality Control),Physical,The Cube (Replacement)
+11,Thu,8:00 AM - 10:00 AM,OIA2014,"Test 2 review, Case 1 (Group 3&4)",Physical,The Cube
+11,Fri,8:00 AM - 9:00 AM,OIA2012,Tutorial 9,Online,NF2F
+11,Fri,9:00 AM - 10:00 AM,OIA2002,Lecture (IR),Online,Assigned Reading
+12,Mon,8:00 AM - 10:00 AM,OIA2002,Lecture (IR),Physical,The Cube @Pharmacy
+12,Mon,2:00 PM - 4:00 PM,OIA2012,Lecture (Antidepressants),Physical,Cube
+12,Tue,8:00 AM - 9:00 AM,OIA2013,Tutorial 3,Online,Self-paced
+12,Tue,10:00 AM - 1:00 PM,OIA1017,Group presentation 30%,Online,F2F (ONLINE)
+12,Thu,8:00 AM - 10:00 AM,OIA2014,"Case 2 (Groups 1&2, 3&4)",Physical,The Cube
+12,Thu,10:00 AM - 12:00 PM,OIA2003,"Tutorial 3, Lecture (mfg), Test review",Online,Online
+12,Fri,8:00 AM - 9:00 AM,OIA2012,Tutorial 10 & Assignment submission,Online,NF2F
+12,Fri,9:00 AM - 10:00 AM,OIA2002,Online Quiz (Spectrum),Online,Online (Spectrum)
+13,Mon,8:00 AM - 10:00 AM,OIA2002,Lecture (FES/AAS),Physical,The Cube @Pharmacy
+13,Mon,2:00 PM - 3:00 PM,OIA2012,Quiz (10%),Online,Online (Spectrum)
+13,Tue,8:00 AM - 10:00 AM,OIA2013,Lecture (Transplantation),Physical,The Cube
+13,Tue,10:00 AM - 1:00 PM,OIA1017,Lecture (Microminerals),Online,F2F ONLINE
+13,Thu,8:00 AM - 9:00 AM,OIA2014,Group Presentation 1,Physical,The Cube
+13,Thu,9:00 AM - 10:00 AM,OIA2014,Group Presentation review,Physical,The Cube
+13,Fri,8:00 AM - 9:00 AM,OIA2012,Test review,Physical,Cube
+13,Fri,9:00 AM - 10:00 AM,OIA2002,Tutorial 7,Online,Self-paced
+14,Mon,8:00 AM - 10:00 AM,OIA2002,Lecture (FES/AAS),Physical,The Cube @Pharmacy
+14,Mon,2:00 PM - 4:00 PM,OIA2012,Non-graded quiz,Online,SPECTRUM
+14,Tue,8:00 AM - 10:00 AM,OIA2013,Lecture (Post-transplant complications),Physical,The Cube
+14,Tue,10:00 AM - 1:00 PM,OIA1017,Lecture (Nutritional assessment) & Feedback,Online,F2F ONLINE
+14,Thu,8:00 AM - 9:00 AM,OIA2014,FAA Short Answer Questions,Physical,The Cube
+14,Thu,9:00 AM - 10:00 AM,OIA2014,FAA SAQ review,Physical,The Cube
+14,Thu,All Day,OIA2003,Submission of lab reports,N/A,SPECTRUM
+14,Fri,8:00 AM - 9:00 AM,OIA2012,Quiz review,Physical,Cube
+14,Fri,9:00 AM - 10:00 AM,OIA2002,Test review,Physical,The Cube @Pharmacy

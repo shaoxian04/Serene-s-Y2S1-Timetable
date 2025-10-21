@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bae's Timetable</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <div class="title-container">
+                    <div class="custom-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Calendar base -->
+                            <defs>
+                                <linearGradient id="calendarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#A855F7;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#C084FC;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#DDD6FE;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                                </linearGradient>
+                                <filter id="glow">
+                                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                    <feMerge> 
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            
+                            <!-- Calendar body -->
+                            <rect x="15" y="25" width="70" height="60" rx="8" ry="8" 
+                                  fill="url(#calendarGradient)" filter="url(#glow)" class="calendar-body"/>
+                            
+                            <!-- Calendar rings -->
+                            <rect x="25" y="15" width="8" height="20" rx="4" ry="4" 
+                                  fill="url(#ringGradient)" class="calendar-ring ring-1"/>
+                            <rect x="42" y="15" width="8" height="20" rx="4" ry="4" 
+                                  fill="url(#ringGradient)" class="calendar-ring ring-2"/>
+                            <rect x="59" y="15" width="8" height="20" rx="4" ry="4" 
+                                  fill="url(#ringGradient)" class="calendar-ring ring-3"/>
+                            
+                            <!-- Calendar grid lines -->
+                            <line x1="25" y1="40" x2="75" y2="40" stroke="rgba(255,255,255,0.6)" stroke-width="1" class="grid-line"/>
+                            <line x1="25" y1="50" x2="75" y2="50" stroke="rgba(255,255,255,0.6)" stroke-width="1" class="grid-line"/>
+                            <line x1="25" y1="60" x2="75" y2="60" stroke="rgba(255,255,255,0.6)" stroke-width="1" class="grid-line"/>
+                            <line x1="25" y1="70" x2="75" y2="70" stroke="rgba(255,255,255,0.6)" stroke-width="1" class="grid-line"/>
+                            
+                            <line x1="35" y1="30" x2="35" y2="80" stroke="rgba(255,255,255,0.6)" stroke-width="1" class="grid-line"/>
+                            <line x1="45" y1="30" x2="45" y2="80" stroke="rgba(255,255,255,0.6)" stroke-width="1" class="grid-line"/>
+                            <line x1="55" y1="30" x2="55" y2="80" stroke="rgba(255,255,255,0.6)" stroke-width="1" class="grid-line"/>
+                            <line x1="65" y1="30" x2="65" y2="80" stroke="rgba(255,255,255,0.6)" stroke-width="1" class="grid-line"/>
+                            
+                            <!-- Calendar dots (representing events) -->
+                            <circle cx="30" cy="45" r="2" fill="#FFFFFF" class="event-dot dot-1"/>
+                            <circle cx="40" cy="55" r="2" fill="#FFFFFF" class="event-dot dot-2"/>
+                            <circle cx="50" cy="45" r="2" fill="#FFFFFF" class="event-dot dot-3"/>
+                            <circle cx="60" cy="65" r="2" fill="#FFFFFF" class="event-dot dot-4"/>
+                            <circle cx="70" cy="55" r="2" fill="#FFFFFF" class="event-dot dot-5"/>
+                            
+                            <!-- Clock overlay -->
+                            <circle cx="75" cy="75" r="12" fill="rgba(255,255,255,0.9)" class="clock-face"/>
+                            <circle cx="75" cy="75" r="10" fill="none" stroke="url(#calendarGradient)" stroke-width="2" class="clock-border"/>
+                            <line x1="75" y1="75" x2="75" y2="68" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" class="clock-hand hour-hand"/>
+                            <line x1="75" y1="75" x2="80" y2="75" stroke="#A855F7" stroke-width="1.5" stroke-linecap="round" class="clock-hand minute-hand"/>
+                            <circle cx="75" cy="75" r="1.5" fill="#8B5CF6" class="clock-center"/>
+                        </svg>
+                    </div>
+                    <span class="title-text">Serene's Y2S1 Timetable💜</span>
+                </div>
+            </h1>
+            <div class="week-selector">
+                <label for="weekSelect">Select Week:</label>
+                <select id="weekSelect">
+                    <option value="1">Week 1</option>
+                    <option value="2">Week 2</option>
+                    <option value="3">Week 3</option>
+                    <option value="4">Week 4</option>
+                    <option value="5">Week 5</option>
+                    <option value="6">Week 6</option>
+                    <option value="7">Week 7</option>
+                    <option value="8">Week 8</option>
+                    <option value="9">Week 9</option>
+                    <option value="10">Week 10</option>
+                    <option value="11">Week 11</option>
+                    <option value="12">Week 12</option>
+                    <option value="13">Week 13</option>
+                    <option value="14">Week 14</option>
+                </select>
+            </div>
+        </header>
+
+        <main>
+            <div id="timetableContainer">
+                <!-- Timetable will be dynamically generated here -->
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
