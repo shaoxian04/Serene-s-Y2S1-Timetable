@@ -1,4 +1,8 @@
-// Timetable data
+require('dotenv').config();
+
+const BOT_TOKEN = process.env.BOT_TOKEN;
+const CHAT_ID = process.env.CHAT_ID;
+
 const timetableData = [
   {
     week: 1,
@@ -1142,12 +1146,8 @@ const remainingData = [
     venue: "The Cube @Pharmacy",
   },
 ];
-
-// Combine all data
 timetableData.push(...remainingData);
 
-// Function to assign dates to timetable data
-// Function to calculate date based on week and day
 function calculateDate(week, day) {
   const startDate = new Date(2025, 9, 13); // 13 Oct 2025
   const dayOffsets = {
@@ -1163,181 +1163,50 @@ function calculateDate(week, day) {
   return date;
 }
 
-// Function to assign dates to timetable data
 function assignDates() {
   timetableData.forEach(item => {
     item.date = calculateDate(item.week, item.day);
   });
 }
 
-assignDates();
 
-export function getTimetableData() {
-  return timetableData;
-}
 
-// Days of the week in order (weekdays only)
-const daysOrder = ["Mon", "Tue", "Wed", "Thu", "Fri"];
-
-// Function to get activities for a specific week
-function getWeekActivities(weekNumber) {
-  return timetableData.filter((activity) => activity.week === weekNumber);
-}
-
-// Function to group activities by day
-function groupActivitiesByDay(activities) {
-  const grouped = {};
-
-  // Initialize all days
-  daysOrder.forEach((day) => {
-    grouped[day] = [];
-  });
-
-  // Group activities
-  activities.forEach((activity) => {
-    if (grouped[activity.day]) {
-      grouped[activity.day].push(activity);
-    }
-  });
-
-  return grouped;
-}
-
-// Function to get mode class for styling
-function getModeClass(mode) {
-  if (mode.toLowerCase().includes("online")) {
-    return "mode-online";
-  } else if (mode.toLowerCase().includes("physical")) {
-    return "mode-physical";
-  }
-  return "";
-}
-
-// Function to render timetable for a specific week
-function renderWeekTimetable(weekNumber) {
-  const container = document.getElementById("timetableContainer");
-  const activities = getWeekActivities(weekNumber);
-  const groupedActivities = groupActivitiesByDay(activities);
-
-  // Add fade out animation before changing content
-  container.style.opacity = "0";
-  container.style.transform = "translateY(20px)";
-
-  setTimeout(() => {
-    let html = `
-            <div class="week-container fade-in">
-                <h2 class="week-title">Week ${weekNumber} Schedule</h2>
-        `;
-
-    // Continue with the rest of the function...
-
-    // Render each day
-    daysOrder.forEach((day) => {
-      const dayActivities = groupedActivities[day];
-      const date = calculateDate(weekNumber, day);
-      const dateString = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-
-      html += `
-            <div class="day-section">
-                <div class="day-header">
-                    ${
-                      day === "Mon"
-                        ? "Monday"
-                        : day === "Tue"
-                        ? "Tuesday"
-                        : day === "Wed"
-                        ? "Wednesday"
-                        : day === "Thu"
-                        ? "Thursday"
-                        : day === "Fri"
-                        ? "Friday"
-                        : day === "Sat"
-                        ? "Saturday"
-                        : "Sunday"
-                    }
-                    <span class="date-display">(${dateString})</span>
-                </div>
-                <div class="activities">
-        `;
-
-      if (dayActivities.length === 0) {
-        html += `
-                <div class="no-activities">
-                    No scheduled activities
-                </div>
-            `;
-      } else {
-        dayActivities.forEach((activity) => {
-          const modeClass = getModeClass(activity.mode);
-          html += `
-                    <div class="activity">
-                        <div class="activity-time">${activity.time}</div>
-                        <div class="activity-course">${activity.course}</div>
-                        <div class="activity-title">${activity.activity}</div>
-                        <div class="activity-details">
-                            <span class="activity-mode ${modeClass}">${activity.mode}</span>
-                            <span class="activity-venue">${activity.venue}</span>
-                        </div>
-                    </div>
-                `;
+async function sendTelegramMessage(message) {
+    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+    try{
+        await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                chat_id: CHAT_ID,
+                text: message,
+            }),
         });
-      }
+    } catch (error) {
+        console.error("Error sending Telegram message:", error);
+    }
+}
+export default async function handler(request, response) {
 
-      html += `
-                </div>
-            </div>
-        `;
-    });
+    assignDates();
 
-    html += "</div>";
-    container.innerHTML = html;
+  const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kuala_Lumpur' }));
+  
+  const tenMinutesFromNow = new Date(now.getTime() + 10 * 60 * 1000);
 
-    // Fade in animation
-    setTimeout(() => {
-      container.style.opacity = "1";
-      container.style.transform = "translateY(0)";
-    }, 50);
-  }, 200);
+  console.log(`Cron job running at: ${tenMinutesFromNow}`);
+
+  // Find if a class is starting right now
+  for (const entry of timetableData) {
+    if (entry.date === tenMinutesFromNow) {
+      const message = `🔔 <b>💜Serene Baeee's Class Starting!💜</b>\nYour <b>${entry.course}, ${entry.activity}</b> class is starting right now.\nMode: ${entry.mode}\nVenue: ${entry.venue}\nGood luck! 💜`;
+      await sendTelegramMessage(message);
+    }
+  }
+
+  // Tell Vercel the function ran successfully
+  response.status(200).send('Cron job checked.');
 }
 
-// Event listener for week selection
-document.addEventListener("DOMContentLoaded", function () {
-  const weekSelect = document.getElementById("weekSelect");
-  const container = document.getElementById("timetableContainer");
-
-  // Add smooth transition styles
-  container.style.transition = "opacity 0.3s ease, transform 0.3s ease";
-
-  // Load initial week (Week 1) with delay for page load animation
-  setTimeout(() => {
-    renderWeekTimetable(1);
-  }, 500);
-
-  // Handle week selection change
-  weekSelect.addEventListener("change", function () {
-    const selectedWeek = parseInt(this.value);
-
-    // Add selection animation
-    this.style.transform = "scale(0.95)";
-    setTimeout(() => {
-      this.style.transform = "scale(1)";
-    }, 150);
-
-    renderWeekTimetable(selectedWeek);
-  });
-
-  // Add hover effects to activities
-  document.addEventListener("mouseover", function (e) {
-    if (e.target.closest(".activity")) {
-      const activity = e.target.closest(".activity");
-      activity.style.transform = "translateX(10px) scale(1.02)";
-    }
-  });
-
-  document.addEventListener("mouseout", function (e) {
-    if (e.target.closest(".activity")) {
-      const activity = e.target.closest(".activity");
-      activity.style.transform = "translateX(0) scale(1)";
-    }
-  });
-});
