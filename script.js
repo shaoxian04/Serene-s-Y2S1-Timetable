@@ -1172,10 +1172,6 @@ function assignDates() {
 
 assignDates();
 
-export function getTimetableData() {
-  return timetableData;
-}
-
 // Days of the week in order (weekdays only)
 const daysOrder = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 
