@@ -2,8 +2,8 @@ export default async function handler(request, response) {
   // 1. Debugging: Check if secrets exist (Don't print the actual secrets!)
   console.log("Checking secrets...");
 
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
+  const token = process.env.BOT_TOKEN;
+  const chatId = process.env.CHAT_ID;
 
   if (!token) {
     console.error("❌ Error: TELEGRAM_BOT_TOKEN is missing.");
